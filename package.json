@@ -1,0 +1,23 @@
+{
+  "name": "@eightnineight/polling-alarm",
+  "version": "1.0.0",
+  "description": "polling alarm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eightnineight/polling-alarm.git"
+  },
+  "keywords": [
+    "alarm",
+    "polling"
+  ],
+  "author": "CHIH-HSIN HSU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eightnineight/polling-alarm/issues"
+  },
+  "homepage": "https://github.com/eightnineight/polling-alarm#readme"
+}
