@@ -1,0 +1,8 @@
+
+const pollingAlarm = () => {
+
+};
+
+export {
+    pollingAlarm,
+};
