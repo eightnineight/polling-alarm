@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/eightnineight/polling-alarm/issues"
   },
-  "homepage": "https://github.com/eightnineight/polling-alarm#readme"
+  "homepage": "https://github.com/eightnineight/polling-alarm#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }
