@@ -9,7 +9,7 @@ npm install @eightnineight/polling-alarm
 ## Usage
 
 ```js
-import { alarmOnce, alarmInterval } from "polling-alarm";
+import { alarmOnce, alarmInterval } from "@eightnineight/polling-alarm";
 
 let alarm = alarmOnce(1000); // 1000 ms
 

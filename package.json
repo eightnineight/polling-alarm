@@ -14,7 +14,8 @@
   },
   "keywords": [
     "alarm",
-    "polling"
+    "polling",
+    "timer"
   ],
   "author": "CHIH-HSIN HSU",
   "license": "MIT",
