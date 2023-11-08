@@ -86,6 +86,10 @@ class AlarmInterval {
 
     isAlarm = () => {
         if (this.isStop()) {
+            if (this.#alarm) {
+                this.#alarm = false;
+                return true;
+            }
             return false;
         }
         if (this.#alarm) {
