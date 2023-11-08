@@ -8,33 +8,41 @@ npm install @eightnineight/polling-alarm
 
 ## Usage
 
-```js
-import { alarmOnce, alarmInterval } from "@eightnineight/polling-alarm";
+### alarmOnce
 
-let onceAlarm = alarmOnce(1000); // 1000 ms
+```js
+import { alarmOnce } from "@eightnineight/polling-alarm";
+
+let alarm = alarmOnce(1000); // 1000 ms
 
 let count = 0;
 while (count < 10) {
-    if (onceAlarm.isAlarm()) {
+    if (alarm.isAlarm()) {
         console.log("alarm once"); // print every 1000ms
 
-        if (onceAlarm.isStop()) {
+        if (alarm.isStop()) {
             console.log("alarm is stop"); // this will be printed.
         }
 
-        onceAlarm.restart();
+        alarm.restart();
         ++count;
     }
 }
+```
 
-let intervalAlarm = alarmInterval(500); // 500 ms
+### alarmInterval
+
+```js
+import { alarmInterval } from "@eightnineight/polling-alarm";
+
+let alarm = alarmInterval(500); // 500 ms
 
 count = 0;
 while (count < 10) {
-    if (intervalAlarm.isAlarm()) {
+    if (alarm.isAlarm()) {
         console.log("alarm interval"); // print every 500ms
 
-        if (intervalAlarm.isStop()) {
+        if (alarm.isStop()) {
             console.log("alarm is stop"); // this won't be printed.
         }
 
@@ -43,9 +51,9 @@ while (count < 10) {
 }
 
 // if you don't call stop(), it will keep running.
-intervalAlarm.stop();
+alarm.stop();
 
-if (intervalAlarm.isStop()) {
+if (alarm.isStop()) {
     console.log("alarm is stop"); // this will be printed.
 }
 ```
