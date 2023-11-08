@@ -21,7 +21,7 @@ while (count < 10) {
         console.log("alarm once"); // print every 1000ms
 
         if (alarm.isStop()) {
-            console.log("alarm is stop"); // this will be printed.
+            console.log("alarm stop"); // this will be printed.
         }
 
         alarm.restart();
@@ -43,7 +43,7 @@ while (count < 10) {
         console.log("alarm interval"); // print every 500ms
 
         if (alarm.isStop()) {
-            console.log("alarm is stop"); // this won't be printed.
+            console.log("alarm stop in while"); // this won't be printed.
         }
 
         ++count;
@@ -54,7 +54,7 @@ while (count < 10) {
 alarm.stop();
 
 if (alarm.isStop()) {
-    console.log("alarm is stop"); // this will be printed.
+    console.log("alarm stop"); // this will be printed.
 }
 ```
 
@@ -69,14 +69,13 @@ let alarm = alarmCount(500, 10); // alarm once every 500 ms, for a total of 10 t
 while (1) {
     if (alarm.isAlarm()) {
         console.log("alarm count"); // print every 500ms
-
-        if (alarm.isStop()) {
-            break;
-        }
+    }
+    if (alarm.isStop()) {
+        break;
     }
 }
 
 if (alarm.isStop()) {
-    console.log("alarm is stop"); // this will be printed.
+    console.log("alarm stop"); // this will be printed.
 }
 ```
