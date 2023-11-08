@@ -37,7 +37,7 @@ import { alarmInterval } from "@eightnineight/polling-alarm";
 
 let alarm = alarmInterval(500); // 500 ms
 
-count = 0;
+let count = 0;
 while (count < 10) {
     if (alarm.isAlarm()) {
         console.log("alarm interval"); // print every 500ms
