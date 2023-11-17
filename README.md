@@ -1,5 +1,7 @@
 # polling-alarm
 
+#### Use polling instead of callback for more precise control of the flow process.
+
 ## Install
 
 ```
@@ -73,9 +75,6 @@ while (1) {
         console.log("alarm count ", ++n); // print every 500ms
     }
     if (alarm.isStop()) {
-        if (alarm.isAlarm()) {
-            console.log("alarm count ", ++n); // print every 500ms
-        }
         break;
     }
 }
