@@ -19,16 +19,29 @@ let alarm = alarmOnce(500); // 500 ms
 
 let count = 0;
 while (count < 10) {
+    if (alarm.isStop()) {
+        // before you call isAlarm(), Even if alarm has already stopped, isRunningOrRinging will be true
+        if (alarm.isRunningOrRinging()) {
+            console.log("still running or ringing"); // this will be printed.
+        }
+    }
     if (alarm.isAlarm()) {
         console.log("alarm once ", count + 1); // print every 500ms
 
         if (alarm.isStop()) {
             console.log("alarm stop"); // this will be printed.
         }
+        if (alarm.isRunningOrRinging()) {
+            console.log("still running or ringing"); // this won't be printed.
+        }
 
         alarm.restart();
         ++count;
     }
+}
+
+if (alarm.isRunningOrRinging()) {
+    console.log("still running or ringing"); // this won't be printed.
 }
 ```
 
@@ -41,15 +54,25 @@ let alarm = alarmInterval(500); // 500 ms
 
 let count = 0;
 while (count < 10) {
+    if (alarm.isStop()) {
+        console.log("stop"); // this won't be printed.
+    }
     if (alarm.isAlarm()) {
         console.log("alarm interval ", count + 1); // print every 500ms
 
         if (alarm.isStop()) {
             console.log("alarm stop in while"); // this won't be printed.
         }
+        if (alarm.isRunningOrRinging()) {
+            console.log("still running or ringing"); // this will be printed.
+        }
 
         ++count;
     }
+}
+
+if (alarm.isRunningOrRinging()) {
+    console.log("still running or ringing"); // this will be printed.
 }
 
 // if you don't call stop(), it will keep running.
@@ -57,6 +80,9 @@ alarm.stop();
 
 if (alarm.isStop()) {
     console.log("alarm stop"); // this will be printed.
+}
+if (alarm.isRunningOrRinging()) {
+    console.log("still running or ringing"); // this won't be printed.
 }
 ```
 

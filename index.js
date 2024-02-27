@@ -31,6 +31,10 @@ class AlarmOnce {
         return false;
     }
 
+    isRunningOrRinging = () => {
+        return this.#alarm || !this.isStop();
+    }
+
     start = (alarmMillisecond) => {
         this.#alarm = false;
         this.#isRunning = false;
@@ -97,6 +101,10 @@ class AlarmInterval {
             return true;
         }
         return false;
+    }
+
+    isRunningOrRinging = () => {
+        return this.#alarm || !this.isStop();
     }
 
     start = (alarmMillisecond) => {
@@ -175,6 +183,10 @@ class AlarmCount {
             return true;
         }
         return false;
+    }
+
+    isRunningOrRinging = () => {
+        return this.#alarm || !this.isStop();
     }
 
     start = (alarmMillisecond, count) => {
